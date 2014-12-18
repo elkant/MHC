@@ -1,0 +1,149 @@
+/*table#tablesorter {
+	font-size: 12px;
+	background-color: white;
+	width: 1024px;
+	border: 1px solid #000;
+}
+table#tablesorter th {
+	text-align: left;
+	padding: 5px;
+	background-color: #6E6E6E;
+}
+table#tablesorter td {
+	color: #FFF;
+	padding: 5px;
+}
+table#tablesorter .even {
+	background-color: #3D3D3D;
+}
+table#tablesorter .odd {
+	background-color: #6E6E6E;
+}*/
+table#tablesorter .header {
+	background-image: url(bg_1.png);
+	background-repeat: no-repeat;
+	border-left: 1px solid #FFF;
+	border-right: 1px solid #000;
+	border-top: 1px solid #FFF;
+	padding-left: 18px;
+	padding-top: 8px;
+        padding-bottom: 0px;
+	height: auto;
+        width:500px;
+}
+table#tablesorter .headerSortUp {
+	background-image: url(asc.png);
+	background-repeat: no-repeat;
+      
+}
+table#tablesorter .headerSortDown {
+	background-image: url(desc.png);
+	background-repeat: no-repeat;
+}
+table#historytable .header {
+	background-image: url(bg_1.png);
+	background-repeat: no-repeat;
+	border-left: 1px solid #FFF;
+	border-right: 1px solid #000;
+	border-top: 1px solid #FFF;
+	padding-left: 18px;
+	padding-top: 8px;
+        padding-bottom: 0px;
+	height: auto;
+        width:500px;
+}
+table#historytable .headerSortUp {
+	background-image: url(asc.png);
+	background-repeat: no-repeat;
+      
+}
+table#historytable .headerSortDown {
+	background-image: url(desc.png);
+	background-repeat: no-repeat;
+}
+table#SearchResults .header {
+	background-image: url(bg_1.png);
+	background-repeat: no-repeat;
+	border-left: 1px solid #FFF;
+	border-right: 1px solid #000;
+	border-top: 1px solid #FFF;
+	padding-left: 18px;
+	padding-top: 8px;
+        padding-bottom: 0px;
+	height: auto;
+        width:auto;
+}
+table#SearchResults .headerSortUp {
+	background-image: url(asc.png);
+	background-repeat: no-repeat;
+      
+}
+table#SearchResults .headerSortDown {
+	background-image: url(desc.png);
+	background-repeat: no-repeat;
+}
+table#allchwstable .header {
+	background-image: url(bg_1.png);
+	background-repeat: no-repeat;
+	border-left: 1px solid #FFF;
+	border-right: 1px solid #000;
+	border-top: 1px solid #FFF;
+	padding-left: 18px;
+	padding-top: 8px;
+        padding-bottom: 0px;
+	height: auto;
+        width:auto;
+}
+table#allchwstable .headerSortUp {
+	background-image: url(asc.png);
+	background-repeat: no-repeat;
+      
+}
+table#allchwstable .headerSortDown {
+	background-image: url(desc.png);
+	background-repeat: no-repeat;
+}
+table#allchws .header {
+	background-image: url(bg_1.png);
+	background-repeat: no-repeat;
+	border-left: 1px solid #FFF;
+	border-right: 1px solid #000;
+	border-top: 1px solid #FFF;
+	padding-left: 24px;
+	padding-top: 0px;
+        padding-bottom: 0px;
+        height: auto;
+        width:auto;
+}
+table#allchws .headerSortUp {
+	background-image: url(asc.png);
+	background-repeat: no-repeat;
+      
+}
+table#allchws .headerSortDown {
+	background-image: url(desc.png);
+	background-repeat: no-repeat;
+}
+table#motherstable .header {
+	background-image: url(bg_1.png);
+	background-repeat: no-repeat;
+	border-left: 1px solid #FFF;
+	border-right: 1px solid #000;
+	border-top: 1px solid #FFF;
+	border-bottom:1px solid #FFF;
+/*       padding-bottom: 100px;*/
+	padding-left: 24px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+        height: auto;
+        width:auto;
+}
+table#motherstable .headerSortUp {
+	background-image: url(asc.png);
+	background-repeat: no-repeat;
+      
+}
+table#motherstable .headerSortDown {
+	background-image: url(desc.png);
+	background-repeat: no-repeat;
+}

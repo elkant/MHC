@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+   
+    <title>CSS3 drop down menu</title>
+</head>
+<body>
+   
+     <ul id="menu">
+	<li>
+            
+            <a href="viewallmothers"><font color="yellow"><b>*</b></font>Home</a>
+        
+        <ul>
+            <li><a href="viewallmothers">View All Mothers</a> </li>
+<!--            <li><a href="maternal_profile.jsp">Mother-Baby Book </a> </li>-->
+        <li><a href="DisplayRegForm.jsp">Enroll a mother </a> </li>
+        </ul>
+        
+        
+        </li>
+<!--        <li><a href="maternal_profile.jsp">Mother Baby Book</a></li>
+        <li><a href="maternityRegister.jsp">Maternity Register</a> </li>
+        -->
+        <li><a  title="update mothers status from pregnant to delivered " href="deliveredmothers.jsp">Update Mothers Status</a></li>
+        
+	<li>
+<a href="#"><font color="yellow"><b>*</b></font> ANC Daily Visits</a>
+<ul>
+    <li><a href="UpdateMothersDiary">Mark Clinic Attendance</a></li>
+<li><a href="MothersDiary">Sms to Defaulters</a></li>
+
+
+
+
+
+
+</ul>
+</li>
+
+<li><a href="#"><font color="yellow"><b>*</b></font> SMS</a>
+<ul>
+<li><a href="sendGeneralSms.jsp">Send General Sms</a></li>
+ 
+
+<!--<li><a href="createSMS.jsp">Create SMS</a></li>
+<li><a href="filterMessage.jsp">Edit Messages</a></li>-->
+<li><a href="viewMsgs">View All Messages</a></li>
+
+</ul>
+</li>
+ 
+	<li><a href="#">Data</a>
+        <ul>
+            <li><a href="backupdata.jsp">Send Backup</a></li>
+            <li><a href="MaternityRawData">Raw Data </a></li>
+            <li><a href="UploadFile.jsp">Upload excel Data</a></li>
+            <li><a href="datareceiver.jsp">Backup Receiver mail</a></li>
+            
+            
+        </ul>
+        </li>
+       <li><a href="#">Reports</a>
+        
+           <ul style="width:300px;">
+            
+            <li style="text-align: left;"><a href="reports_detailedsummaries.jsp">ALL Registers Summary ( # per Site)</a></li>
+            <li style="text-align: left;"><a href="reports_selectyear.jsp">ANC Visits Report ( #per village)</a></li>
+            <li style="text-align: left;"><a href="reports_maternityreg.jsp">Maternity Report (# per village)</a></li>
+            <li style="text-align: left;"><a href="report_completeregisters.jsp">Completion Report(All registers )</a></li>
+            <li style="text-align: left;"><a href="RAWDATA1">Mobile Enrollments ( # per site)</a></li>
+            <li style="text-align: left;"><a title="mothers who are enrolled via mobile and went ahead to attend health facilities" href="MOBILEREGISTER">Mobile and register linking (individual report)</a></li>
+            <li style="text-align: left;"><a title="" href="MOBILEANDREGISTERSUMMARY">Mobile and registers linking (summary)</a></li>
+            <li style="text-align: left;"><a title="" href="facilitiesmatandancsummary.jsp">ANC Visits and Delivery report (registers Summary)</a></li>
+            
+        </ul>
+        </li>
+        
+        <li><a href="#">Help</a>
+        
+          <ul>
+            <li><a href="clerkhelp.jsp">Inbuilt Help</a></li>
+            <li><a href="ppt/userguide.pptx">user Guide</a></li>
+            
+            
+        </ul>
+        </li>
+	<li><a href="logout.jsp">Log out</a></li>
+</ul>
+   
+</body>
+</html>
