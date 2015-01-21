@@ -64,7 +64,7 @@ $( "#accordion" ).accordion();
                     <h5 align="center"><img src="images/mhc_logo.png" height="150px" alt="Health Communication System" align="centre"/></h5>
                     
                     <br/><br/>
-                    <form action="login" method="post" style="margin-left: 205px; height:220px; width:290px;">
+                    <form action="login" method="post" style="margin-left: 205px; height:230px; width:290px;">
                        <h4 style="" align="center">Login</h4>
                         <table style="margin-left:40px;" width="100px" cellpadding="8px" cellspacing="6px">
                             <tr>
@@ -83,7 +83,7 @@ $( "#accordion" ).accordion();
                             </tr>
                             <tr>
                                 <td style="text-align: right;"> </td>
-                                <td style="text-align: center;"><input type="submit" class="submit" value="Log In"/>
+                                <td style="text-align: center;"><input type="submit" style="height:37px;" class="submit" value="Log In"/>
                                    
                                     
                                 </td>

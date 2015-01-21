@@ -61,6 +61,8 @@ System.out.println("Computer name "+computername);
 
 
 
+updateFacilityNames();
+
 
 //current_time=sc+"-"+mn+"-"+hr+"-"+dater+"-"+mnth+"-"+yr;
 
@@ -291,5 +293,61 @@ error_login=null;
         }// </editor-fold>
         
 
+        
+        public  void updateFacilityNames(){
+        try {
+           // mobiledbConn conn=new mobiledbConn();
+           dbConn conn = new dbConn();
+                   
+                   String getfacil="Select *  from mother_details where facilityname LIKE 'Emmining'";
+                   
+                   conn.rs=conn.st.executeQuery(getfacil);
+                   
+                   int count=0;
+                   
+                   while(conn.rs.next()){
+                   
+                       count++;
+                       
+                       String updatefacil="update mother_details set facilityname='Emining' where motherID='"+conn.rs.getString("motherID")+"'";
+                   
+                       System.out.println("\n "+count+"___"+updatefacil);
+                       
+                       conn.st2.executeUpdate(updatefacil);
+                       
+                   
+                   }
+                   
+                   //update NGUBURET FACILITY
+                   
+                    String getfacil2="Select *  from mother_details where facilityname LIKE 'Ngubureti'";
+                   
+                   conn.rs=conn.st.executeQuery(getfacil2);
+                   
+                   int count1=0;
+                   
+                   while(conn.rs.next()){
+                   
+                       count1++;
+                       
+                       String updatefacil2="update mother_details set facilityname='Ngubereti' where motherID='"+conn.rs.getString("motherID")+"'";
+                   
+                       System.out.println("\n "+count1+"___"+updatefacil2);
+                       
+                       conn.st2.executeUpdate(updatefacil2);
+                       
+                   
+                   }
+        } catch (SQLException ex) {
+            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+       
+        
+     
+     }
+        
+        
+        
     
 }

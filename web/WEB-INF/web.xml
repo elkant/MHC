@@ -543,6 +543,18 @@
         <servlet-name>CONTROLSITESFACILITYANDMATANCSUMMARIES</servlet-name>
         <servlet-class>REPORTS.CONTROLSITESFACILITYANDMATANCSUMMARIES</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>loadduplicates</servlet-name>
+        <servlet-class>DQA.loadduplicates</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>invalid_dates</servlet-name>
+        <servlet-class>DQA.invalid_dates</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>bundles</servlet-name>
+        <servlet-class>sender.bundles</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>smssender</servlet-name>
         <url-pattern>/smssender</url-pattern>
@@ -1104,6 +1116,18 @@
     <servlet-mapping>
         <servlet-name>CONTROLSITESFACILITYANDMATANCSUMMARIES</servlet-name>
         <url-pattern>/CONTROLSITESFACILITYANDMATANCSUMMARIES</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>loadduplicates</servlet-name>
+        <url-pattern>/loadduplicates</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>invalid_dates</servlet-name>
+        <url-pattern>/invalid_dates</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>bundles</servlet-name>
+        <url-pattern>/bundles</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>3000</session-timeout>

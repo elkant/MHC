@@ -412,7 +412,7 @@ int rowcount=0;
  //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
  //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
  //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
- String ancheader="  SELECT atoh.motherid as MOTHERID, DOB,FNAME,SNAME,LNAME,PhoneNo,NOKPhoneNo,VisitDate,"
+ String ancheader="  SELECT atoh.motherid as MOTHERID, DOB,FNAME,SNAME,LNAME,PhoneNo,NOKPhoneNo,VisitDate, "
 +" delivery_date as EDD,Age,Gravida,parity,UPPER(facilityname) as Facility,"
 +" atoh.ancno as Anc_no,DateofVisit,FirstVisit,visit_no,Village,Gestation,Weight,"
 +" BloodPressure,CounselledOn,qtow.Haemoglobin as Haemoglobin,RPR,HIVinit,HIVRetest,"

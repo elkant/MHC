@@ -12,7 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>SEND GENERAL SMS</title>
-         <link rel="stylesheet" type="text/css" href="css/divCss.css"/>
+<!--         <link rel="stylesheet" type="text/css" href="css/divCss.css"/>-->
           <link rel="stylesheet" type="text/css" href="css/divCss_1.css"/>
          
         <link rel="stylesheet" href="menu/adminmenu_files/css3menu1/style.css" type="text/css" /><style type="text/css">._css3m{display:none}</style>
@@ -385,9 +385,7 @@ textarea:focus{
 }
 select:focus{
      border-color:#cc66ff ;
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    transform: scale(1.1);
+   
     -moz-box-shadow: 5px 3px 1px activecaption;
     -webkit-box-shadow: 5px 3px 1px activecaption;
     box-shadow: 7px 7px 2px activecaption;
@@ -415,15 +413,14 @@ select{
     -moz-border-radius: 7px;
     border-radius: 7px;
     border:1px solid #fff;
-   width: 150px;
-    height: 30px;
+   width: 190px;
+    height: 38px;
     text-shadow:1px 1px 1px #777;
     -moz-box-shadow: 0px 2px 0px #999;
     -webkit-box-shadow: 0px 2px 0px #999;
     box-shadow: 0px 2px 0px #999;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+    font-size: 20px;
+  
 }
     </style>
     </head>
