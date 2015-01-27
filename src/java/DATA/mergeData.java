@@ -660,7 +660,7 @@ String existancechecker = "select * from hiv_exposure where exposure_id='" + tem
                 //check in the master db whether data exists...
 //String existancechecker = "select * from aetoak where motherid='" + conn.rs.getString(11) + "' and ancno='"+conn.rs.getString(2)+"' and ConditionID='"+conn.rs.getString(3)+"' and others_section_6='"+conn.rs.getString(4)+"' and deworming='"+conn.rs.getString(5)+"' and ipt='"+conn.rs.getString(6)+"' and ttdose='"+conn.rs.getString(7)+"' and iron='"+conn.rs.getString(8)+"' and folic='"+conn.rs.getString(9)+"' and itn='"+conn.rs.getString(10)+"'";
 //String existancechecker = "select * from itop where ancRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(9) + "' and timestamp='"+tempconn.rs.getString(8)+"'";
-String existancechecker = "select * from itop where ancRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(9) + "' ";
+String existancechecker = "select * from itop where ancRegisterID='"+tempconn.rs.getString(1)+tempconn.rs.getString(9) + "' ";
 
 //insert into the master db from the temp db
 
@@ -803,7 +803,7 @@ String existancechecker = "select * from maternal_details where ancno='" + tempc
                 
                 //check in the master db whether data exists...
 //String existancechecker = "select * from aetoak where motherid='" + conn.rs.getString(11) + "' and ancno='"+conn.rs.getString(2)+"' and ConditionID='"+conn.rs.getString(3)+"' and others_section_6='"+conn.rs.getString(4)+"' and deworming='"+conn.rs.getString(5)+"' and ipt='"+conn.rs.getString(6)+"' and ttdose='"+conn.rs.getString(7)+"' and iron='"+conn.rs.getString(8)+"' and folic='"+conn.rs.getString(9)+"' and itn='"+conn.rs.getString(10)+"'";
-String existancechecker = "select * from mother_details where motherID='" + tempconn.rs.getString(1).trim()+ "'";
+String existancechecker = "select * from mother_details where motherID like '%" + tempconn.rs.getString(1).trim()+ "%'";
 
 //insert into the master db from the temp db
 
@@ -869,12 +869,11 @@ String existancechecker = "select * from mother_details where motherID='" + temp
 
             tempconn.rs = tempconn.st.executeQuery(mergepresentpregnancy);
 
-            while (tempconn.rs.next()) {
-                
+            while (tempconn.rs.next()) {                
                 //check in the master db whether data exists...
 //String existancechecker = "select * from aetoak where motherid='" + conn.rs.getString(11) + "' and ancno='"+conn.rs.getString(2)+"' and ConditionID='"+conn.rs.getString(3)+"' and others_section_6='"+conn.rs.getString(4)+"' and deworming='"+conn.rs.getString(5)+"' and ipt='"+conn.rs.getString(6)+"' and ttdose='"+conn.rs.getString(7)+"' and iron='"+conn.rs.getString(8)+"' and folic='"+conn.rs.getString(9)+"' and itn='"+conn.rs.getString(10)+"'";
 //String existancechecker = "select * from present_pregnancy where PresentPregnancy='" + tempconn.rs.getString(1)+tempconn.rs.getString(7) + "' and timestamp='"+tempconn.rs.getString(8)+"'";
-String existancechecker = "select * from present_pregnancy where PresentPregnancy='" + tempconn.rs.getString(1)+tempconn.rs.getString(7) + "'";
+String existancechecker="select * from present_pregnancy where PresentPregnancy like '%" + tempconn.rs.getString(1)+tempconn.rs.getString(7) + "%'";
 
 //insert into the master db from the temp db
 
@@ -948,7 +947,7 @@ String existancechecker = "select * from present_pregnancy where PresentPregnanc
                 //check in the master db whether data exists...
 //String existancechecker = "select * from aetoak where motherid='" + conn.rs.getString(11) + "' and ancno='"+conn.rs.getString(2)+"' and ConditionID='"+conn.rs.getString(3)+"' and others_section_6='"+conn.rs.getString(4)+"' and deworming='"+conn.rs.getString(5)+"' and ipt='"+conn.rs.getString(6)+"' and ttdose='"+conn.rs.getString(7)+"' and iron='"+conn.rs.getString(8)+"' and folic='"+conn.rs.getString(9)+"' and itn='"+conn.rs.getString(10)+"'";
 //String existancechecker = "select * from qtow where ancRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "' and timestamp='"+tempconn.rs.getString(10)+"'";
-String existancechecker = "select * from qtow where ancRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "'";
+String existancechecker = "select * from qtow where ancRegisterID like '%" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "%'";
 
 //insert into the master db from the temp db
 
@@ -1019,7 +1018,7 @@ String existancechecker = "select * from qtow where ancRegisterID='" + tempconn.
                 //check in the master db whether data exists...
 //String existancechecker = "select * from aetoak where motherid='" + conn.rs.getString(11) + "' and ancno='"+conn.rs.getString(2)+"' and ConditionID='"+conn.rs.getString(3)+"' and others_section_6='"+conn.rs.getString(4)+"' and deworming='"+conn.rs.getString(5)+"' and ipt='"+conn.rs.getString(6)+"' and ttdose='"+conn.rs.getString(7)+"' and iron='"+conn.rs.getString(8)+"' and folic='"+conn.rs.getString(9)+"' and itn='"+conn.rs.getString(10)+"'";
 //String existancechecker = "select * from xtoad where ancRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "' and timestamp='"+tempconn.rs.getString(12)+"'";
-String existancechecker = "select * from xtoad where ancRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "' ";
+String existancechecker = "select * from xtoad where ancRegisterID like '%" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "%' ";
 
 //insert into the master db from the temp db
 
@@ -1095,7 +1094,7 @@ String existancechecker = "select * from xtoad where ancRegisterID='" + tempconn
                 //check in the master db whether data exists...
 //String existancechecker = "select * from aetoak where motherid='" + conn.rs.getString(11) + "' and ancno='"+conn.rs.getString(2)+"' and ConditionID='"+conn.rs.getString(3)+"' and others_section_6='"+conn.rs.getString(4)+"' and deworming='"+conn.rs.getString(5)+"' and ipt='"+conn.rs.getString(6)+"' and ttdose='"+conn.rs.getString(7)+"' and iron='"+conn.rs.getString(8)+"' and folic='"+conn.rs.getString(9)+"' and itn='"+conn.rs.getString(10)+"'";
 //String existancechecker = "select * from xtoad where ancRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "' and timestamp='"+tempconn.rs.getString(12)+"'";
-String existancechecker = "select * from postnat_aatoae where tableid='" + tempconn.rs.getString(1)+tempconn.rs.getString(9) + "' ";
+String existancechecker = "select * from postnat_aatoae where tableid like '%" + tempconn.rs.getString(1)+tempconn.rs.getString(9) + "%' ";
 
 //insert into the master db from the temp db
 
@@ -1164,7 +1163,7 @@ String existancechecker = "select * from postnat_aatoae where tableid='" + tempc
                 //check in the master db whether data exists...
 //String existancechecker = "select * from aetoak where motherid='" + conn.rs.getString(11) + "' and ancno='"+conn.rs.getString(2)+"' and ConditionID='"+conn.rs.getString(3)+"' and others_section_6='"+conn.rs.getString(4)+"' and deworming='"+conn.rs.getString(5)+"' and ipt='"+conn.rs.getString(6)+"' and ttdose='"+conn.rs.getString(7)+"' and iron='"+conn.rs.getString(8)+"' and folic='"+conn.rs.getString(9)+"' and itn='"+conn.rs.getString(10)+"'";
 //String existancechecker = "select * from xtoad where ancRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "' and timestamp='"+tempconn.rs.getString(12)+"'";
-String existancechecker = "select * from postnat_aftoai where tableid='" + tempconn.rs.getString(1)+tempconn.rs.getString(7) + "' ";
+String existancechecker = "select * from postnat_aftoai where tableid like '%"+tempconn.rs.getString(1)+tempconn.rs.getString(7)+"%' ";
 
 //insert into the master db from the temp db
 
@@ -1234,7 +1233,7 @@ String existancechecker = "select * from postnat_aftoai where tableid='" + tempc
                 //check in the master db whether data exists...
 //String existancechecker = "select * from aetoak where motherid='" + conn.rs.getString(11) + "' and ancno='"+conn.rs.getString(2)+"' and ConditionID='"+conn.rs.getString(3)+"' and others_section_6='"+conn.rs.getString(4)+"' and deworming='"+conn.rs.getString(5)+"' and ipt='"+conn.rs.getString(6)+"' and ttdose='"+conn.rs.getString(7)+"' and iron='"+conn.rs.getString(8)+"' and folic='"+conn.rs.getString(9)+"' and itn='"+conn.rs.getString(10)+"'";
 //String existancechecker = "select * from xtoad where ancRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "' and timestamp='"+tempconn.rs.getString(12)+"'";
-String existancechecker = "select * from postnat_atof where ID='" + tempconn.rs.getString(1)+tempconn.rs.getString(10) + "' ";
+String existancechecker = "select * from postnat_atof where ID like '%" + tempconn.rs.getString(1)+tempconn.rs.getString(10) + "%' ";
 
 //insert into the master db from the temp db
 
@@ -1307,7 +1306,7 @@ String existancechecker = "select * from postnat_atof where ID='" + tempconn.rs.
                 //check in the master db whether data exists...
 //String existancechecker = "select * from aetoak where motherid='" + conn.rs.getString(11) + "' and ancno='"+conn.rs.getString(2)+"' and ConditionID='"+conn.rs.getString(3)+"' and others_section_6='"+conn.rs.getString(4)+"' and deworming='"+conn.rs.getString(5)+"' and ipt='"+conn.rs.getString(6)+"' and ttdose='"+conn.rs.getString(7)+"' and iron='"+conn.rs.getString(8)+"' and folic='"+conn.rs.getString(9)+"' and itn='"+conn.rs.getString(10)+"'";
 //String existancechecker = "select * from xtoad where ancRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "' and timestamp='"+tempconn.rs.getString(12)+"'";
-String existancechecker = "select * from postnat_gtom where ID='" + tempconn.rs.getString(1)+tempconn.rs.getString(9) + "' ";
+String existancechecker = "select * from postnat_gtom where ID like '%" + tempconn.rs.getString(1)+tempconn.rs.getString(9) + "%' ";
 
 //insert into the master db from the temp db
 
@@ -1381,7 +1380,7 @@ String existancechecker = "select * from postnat_gtom where ID='" + tempconn.rs.
                 //check in the master db whether data exists...
 //String existancechecker = "select * from aetoak where motherid='" + conn.rs.getString(11) + "' and ancno='"+conn.rs.getString(2)+"' and ConditionID='"+conn.rs.getString(3)+"' and others_section_6='"+conn.rs.getString(4)+"' and deworming='"+conn.rs.getString(5)+"' and ipt='"+conn.rs.getString(6)+"' and ttdose='"+conn.rs.getString(7)+"' and iron='"+conn.rs.getString(8)+"' and folic='"+conn.rs.getString(9)+"' and itn='"+conn.rs.getString(10)+"'";
 //String existancechecker = "select * from xtoad where ancRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "' and timestamp='"+tempconn.rs.getString(12)+"'";
-String existancechecker = "select * from postnat_ntot where ID='" + tempconn.rs.getString(1)+tempconn.rs.getString(9) + "' ";
+String existancechecker = "select * from postnat_ntot where ID like '%" + tempconn.rs.getString(1)+tempconn.rs.getString(9) + "%' ";
 
 //insert into the master db from the temp db
 
@@ -1450,7 +1449,7 @@ String existancechecker = "select * from postnat_ntot where ID='" + tempconn.rs.
                 //check in the master db whether data exists...
 //String existancechecker = "select * from aetoak where motherid='" + conn.rs.getString(11) + "' and ancno='"+conn.rs.getString(2)+"' and ConditionID='"+conn.rs.getString(3)+"' and others_section_6='"+conn.rs.getString(4)+"' and deworming='"+conn.rs.getString(5)+"' and ipt='"+conn.rs.getString(6)+"' and ttdose='"+conn.rs.getString(7)+"' and iron='"+conn.rs.getString(8)+"' and folic='"+conn.rs.getString(9)+"' and itn='"+conn.rs.getString(10)+"'";
 //String existancechecker = "select * from xtoad where ancRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "' and timestamp='"+tempconn.rs.getString(12)+"'";
-String existancechecker = "select * from postnat_utoz where tableid='" + tempconn.rs.getString(1)+tempconn.rs.getString(9) + "' ";
+String existancechecker = "select * from postnat_utoz where tableid like '%" + tempconn.rs.getString(1)+tempconn.rs.getString(9) + "%' ";
 
 //insert into the master db from the temp db
 
@@ -1524,7 +1523,7 @@ String existancechecker = "select * from postnat_utoz where tableid='" + tempcon
                 //check in the master db whether data exists...
 //String existancechecker = "select * from aetoak where motherid='" + conn.rs.getString(11) + "' and ancno='"+conn.rs.getString(2)+"' and ConditionID='"+conn.rs.getString(3)+"' and others_section_6='"+conn.rs.getString(4)+"' and deworming='"+conn.rs.getString(5)+"' and ipt='"+conn.rs.getString(6)+"' and ttdose='"+conn.rs.getString(7)+"' and iron='"+conn.rs.getString(8)+"' and folic='"+conn.rs.getString(9)+"' and itn='"+conn.rs.getString(10)+"'";
 //String existancechecker = "select * from xtoad where ancRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "' and timestamp='"+tempconn.rs.getString(12)+"'";
-String existancechecker = "select * from mat_actoai where tableid='" + tempconn.rs.getString(1)+tempconn.rs.getString(10) + "' ";
+String existancechecker = "select * from mat_actoai where tableid like '%" + tempconn.rs.getString(1)+tempconn.rs.getString(10) + "%' ";
 
 //insert into the master db from the temp db
 
@@ -1593,7 +1592,7 @@ String insertdata = "replace into mat_actoai(tableid,ancno,arv_anc,arv_maternity
                 //check in the master db whether data exists...
 //String existancechecker = "select * from aetoak where motherid='" + conn.rs.getString(11) + "' and ancno='"+conn.rs.getString(2)+"' and ConditionID='"+conn.rs.getString(3)+"' and others_section_6='"+conn.rs.getString(4)+"' and deworming='"+conn.rs.getString(5)+"' and ipt='"+conn.rs.getString(6)+"' and ttdose='"+conn.rs.getString(7)+"' and iron='"+conn.rs.getString(8)+"' and folic='"+conn.rs.getString(9)+"' and itn='"+conn.rs.getString(10)+"'";
 //String existancechecker = "select * from xtoad where ancRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "' and timestamp='"+tempconn.rs.getString(12)+"'";
-String existancechecker = "select * from mat_ajtoan where tableid='" + tempconn.rs.getString(1)+tempconn.rs.getString(8) + "' ";
+String existancechecker = "select * from mat_ajtoan where tableid like '%" + tempconn.rs.getString(1)+tempconn.rs.getString(8) + "' ";
 
 //insert into the master db from the temp db
 
@@ -1661,7 +1660,7 @@ String insertdata = "replace into mat_ajtoan(tableid,ancno,delivery_by,birth_no,
                 //check in the master db whether data exists...
 //String existancechecker = "select * from aetoak where motherid='" + conn.rs.getString(11) + "' and ancno='"+conn.rs.getString(2)+"' and ConditionID='"+conn.rs.getString(3)+"' and others_section_6='"+conn.rs.getString(4)+"' and deworming='"+conn.rs.getString(5)+"' and ipt='"+conn.rs.getString(6)+"' and ttdose='"+conn.rs.getString(7)+"' and iron='"+conn.rs.getString(8)+"' and folic='"+conn.rs.getString(9)+"' and itn='"+conn.rs.getString(10)+"'";
 //String existancechecker = "select * from xtoad where ancRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "' and timestamp='"+tempconn.rs.getString(12)+"'";
-String existancechecker = "select * from mat_atoh where MatRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "' ";
+String existancechecker = "select * from mat_atoh where MatRegisterID like '%" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "%' ";
 
 //insert into the master db from the temp db
 
@@ -1733,7 +1732,7 @@ String insertdata = "replace into mat_atoh(MatRegisterID,AdmissionNo,AdmissionDa
                 //check in the master db whether data exists...
 //String existancechecker = "select * from aetoak where motherid='" + conn.rs.getString(11) + "' and ancno='"+conn.rs.getString(2)+"' and ConditionID='"+conn.rs.getString(3)+"' and others_section_6='"+conn.rs.getString(4)+"' and deworming='"+conn.rs.getString(5)+"' and ipt='"+conn.rs.getString(6)+"' and ttdose='"+conn.rs.getString(7)+"' and iron='"+conn.rs.getString(8)+"' and folic='"+conn.rs.getString(9)+"' and itn='"+conn.rs.getString(10)+"'";
 //String existancechecker = "select * from xtoad where ancRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "' and timestamp='"+tempconn.rs.getString(12)+"'";
-String existancechecker = "select * from mat_htol where MatRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(8) + "' ";
+String existancechecker = "select * from mat_htol where MatRegisterID like '%" + tempconn.rs.getString(1)+tempconn.rs.getString(8) + "%' ";
 
 //insert into the master db from the temp db
 
@@ -1803,7 +1802,7 @@ String insertdata = "replace into mat_htol(MatRegisterID,AdmissionNo,Parity,Grav
                 //check in the master db whether data exists...
 //String existancechecker = "select * from aetoak where motherid='" + conn.rs.getString(11) + "' and ancno='"+conn.rs.getString(2)+"' and ConditionID='"+conn.rs.getString(3)+"' and others_section_6='"+conn.rs.getString(4)+"' and deworming='"+conn.rs.getString(5)+"' and ipt='"+conn.rs.getString(6)+"' and ttdose='"+conn.rs.getString(7)+"' and iron='"+conn.rs.getString(8)+"' and folic='"+conn.rs.getString(9)+"' and itn='"+conn.rs.getString(10)+"'";
 //String existancechecker = "select * from xtoad where ancRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "' and timestamp='"+tempconn.rs.getString(12)+"'";
-String existancechecker = "select * from mat_mtou where MatRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(12) + "' ";
+String existancechecker = "select * from mat_mtou where MatRegisterID like '%" + tempconn.rs.getString(1)+tempconn.rs.getString(12) + "%' ";
 
 //insert into the master db from the temp db
 
@@ -1868,14 +1867,14 @@ String insertdata = "replace into mat_mtou(MatRegisterID,AdmissionNo,LabourDurat
             
            String mergematvtoab="select * from mat_vtoab";
 
-            tempconn.rs = tempconn.st.executeQuery(mergematvtoab);
+           tempconn.rs = tempconn.st.executeQuery(mergematvtoab);
 
-            while (tempconn.rs.next()) {
+           while (tempconn.rs.next()) {
                 
                 //check in the master db whether data exists...
 //String existancechecker = "select * from aetoak where motherid='" + conn.rs.getString(11) + "' and ancno='"+conn.rs.getString(2)+"' and ConditionID='"+conn.rs.getString(3)+"' and others_section_6='"+conn.rs.getString(4)+"' and deworming='"+conn.rs.getString(5)+"' and ipt='"+conn.rs.getString(6)+"' and ttdose='"+conn.rs.getString(7)+"' and iron='"+conn.rs.getString(8)+"' and folic='"+conn.rs.getString(9)+"' and itn='"+conn.rs.getString(10)+"'";
 //String existancechecker = "select * from xtoad where ancRegisterID='" + tempconn.rs.getString(1)+tempconn.rs.getString(11) + "' and timestamp='"+tempconn.rs.getString(12)+"'";
-String existancechecker = "select * from mat_vtoab where tableid='" + tempconn.rs.getString(1)+tempconn.rs.getString(10) + "' ";
+String existancechecker = "select * from mat_vtoab where tableid like '%" + tempconn.rs.getString(1)+tempconn.rs.getString(10) + "%' ";
 
 //insert into the master db from the temp db
 

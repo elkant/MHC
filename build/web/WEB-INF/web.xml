@@ -555,6 +555,18 @@
         <servlet-name>bundles</servlet-name>
         <servlet-class>sender.bundles</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>updateinvaliddate</servlet-name>
+        <servlet-class>DQA.updateinvaliddate</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>cleanduplicates</servlet-name>
+        <servlet-class>DQA.cleanduplicates</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>joinmatchinganc</servlet-name>
+        <servlet-class>DQA.joinmatchinganc</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>smssender</servlet-name>
         <url-pattern>/smssender</url-pattern>
@@ -1128,6 +1140,18 @@
     <servlet-mapping>
         <servlet-name>bundles</servlet-name>
         <url-pattern>/bundles</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateinvaliddate</servlet-name>
+        <url-pattern>/updateinvaliddate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cleanduplicates</servlet-name>
+        <url-pattern>/cleanduplicates</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>joinmatchinganc</servlet-name>
+        <url-pattern>/joinmatchinganc</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>3000</session-timeout>

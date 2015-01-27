@@ -43,14 +43,14 @@ public class invalid_dates extends HttpServlet {
         
         if(request.getParameter("register").equalsIgnoreCase("anc")){
         
-        Unique_No="ANC NO";
+        Unique_No="Anc no";
         }
         else if(request.getParameter("register").equalsIgnoreCase("maternity")){
         Unique_No="Admission No.";
         
         }
         else if (request.getParameter("register").equalsIgnoreCase("postnatal")){
-        Unique_No="PNCRegNo";
+        Unique_No="PNC Reg No.";
         
         }
         
@@ -65,9 +65,9 @@ public class invalid_dates extends HttpServlet {
          
          //now receive the parameters passed
          String category="";
-         if(request.getParameter("category")!=null){
+         if(request.getParameter("register")!=null){
          
-         category=request.getParameter("category");
+         category=request.getParameter("register");
          }
          
           
@@ -84,7 +84,7 @@ public class invalid_dates extends HttpServlet {
                            +"<th>"+Unique_No+"</th>"                          
                            +"<th>Full Name</th>"                          
                            +"<th>Facility Name</th>"                                              
-                           +"<th>Date</th>"                                              
+                           +"<th>Invalid Date</th>"                                              
                            +"<th>Date Type</th>"                     
                            +"</tr>"		                
 		           +"</thead>"
@@ -92,159 +92,125 @@ public class invalid_dates extends HttpServlet {
                              
          
          
-          String anc_facil_name=" select "
-+" u.motherID as id,"
-+" u.anc_no, "
-+" UPPER(concat(u.FName,\"\",u.SName,u.LName,u.Age)) as mother_name,"
-+" u.FName,"
-+" u.SName,"
-+" u.LName,"
-+" u.Age,"
-+" u.facilityname,"
-+" ocur,"
-+" case" 
-+" when ocur >1 then 'yes' "
-+" else 'no' "
-+" end as isduplicate"
-+" FROM mother_details  u "
-+" inner JOIN ("
-+" select  motherID  ,anc_no, FName ,SName,LName,facilityname  ,mother_details.Age  , count(*) as ocur"
-+" FROM mother_details"
- 
-+" group by anc_no,FName,SName,LName,Age,facilityname having ocur > 1"
- +" )  temp "
- +" on u.FName=temp.FName "
-+" and u.SName=temp.SName "
-+" and u.LName=temp.LName "
-+" and u.anc_no=temp.anc_no"
-+" and u.facilityname=temp.facilityname" 
-+" group by id order by mother_name desc " ;
-      
+          String anc1="select  concat(ancRegisterID,\"%ancRegisterID%DateofVisit%atoh\") as id, ancno, UPPER(concat(FName,\" \",SName,\" \",LName)) as mother_name, "
+ +" facilityname,DateofVisit ,\"Visit date\" FROM mother_details left join atoh on mother_details.motherID=atoh.motherid "  
+ +" where (DateofVisit NOT REGEXP '^..........$' || DateofVisit>='2017-01-01')";
+          
    
-//=========================================anc and facility=================================================================
-        String anc_facility=  " select "
-+" u.motherID as id,"
-+" u.anc_no, "
-+" UPPER(concat(u.FName,\"\",u.SName,u.LName,u.Age)) as mother_name,"
-+" u.FName,"
-+" u.SName,"
-+" u.LName,"
-+" u.Age,"
-+" u.facilityname,"
-+" ocur,"
-+" case" 
-+" when ocur >1 then 'yes' "
-+" else 'no' "
-+" end as isduplicate"
-+" FROM mother_details  u "
-+" inner JOIN ("
-+" select  motherID  ,anc_no, FName ,SName,LName,facilityname  ,mother_details.Age  , count(*) as ocur"
-+" FROM mother_details where anc_no !=''"
-+" group by anc_no,FName,SName,LName,Age,facilityname having ocur > 1"
- +" )  temp "
- +" on  u.anc_no=temp.anc_no"
-+" and u.facilityname=temp.facilityname where u.anc_no !=''" 
-+" group by id order by mother_name desc " ;
- 
-        
-      //  ====================================Names and facility=============================================
-        
-        
-            String name_facility=" select "
-+" u.motherID as id,"
-+" u.anc_no, "
-+" UPPER(concat(u.FName,\"\",u.SName,u.LName,u.Age)) as mother_name,"
-+" u.FName,"
-+" u.SName,"
-+" u.LName,"
-+" u.Age,"
-+" u.facilityname,"
-+" ocur,"
-+" case" 
-+" when ocur >1 then 'yes' "
-+" else 'no' "
-+" end as isduplicate"
-+" FROM mother_details  u "
-+" inner JOIN ("
-+" select  motherID  ,anc_no, FName ,SName,LName,facilityname  ,mother_details.Age  , count(*) as ocur"
-+" FROM mother_details where concat(FName,\"\",SName,LName) !=''"
-+" group by anc_no,FName,SName,LName,Age,facilityname having ocur > 1"
- +" )  temp "
- +" on u.FName=temp.FName "
-+" and u.SName=temp.SName "
-+" and u.LName=temp.LName"
-+" and u.facilityname=temp.facilityname where concat(temp.FName,\"\",temp.SName,temp.LName)!=''" 
-+" group by id order by mother_name desc " ;
-        
-     String qr="";   
+          
+String mat1="select  concat(mat_atoh.MatRegisterID,\"%MatRegisterID%AdmissionDate%mat_atoh\") as id, mat_atoh.AdmissionNo as anc_no, UPPER(concat(FName,\" \",SName,\" \",LName)) as mother_name, "
++" facilityname,AdmissionDate ,\"Admission Date\" FROM mother_details left join mat_atoh on mother_details.motherID=mat_atoh.motherid "  
+ +" where (AdmissionDate NOT REGEXP '^..........$' || AdmissionDate>='2016-01-01') ";
+   
+String mat2 ="select  concat(mat_htol.MatRegisterID,\"%MatRegisterID%LMP%mat_atoh\") as id, mat_htol.AdmissionNo as anc_no, UPPER(concat(FName,\" \",SName,\" \",LName)) as mother_name, "
++" facilityname,LMP ,\"LMP\" FROM mother_details left join mat_htol on mother_details.motherID=mat_htol.motherid "  
+ +" where (LMP NOT REGEXP '^..........$' || LMP>='2016-01-01')";           
+          
+String mat3="select  concat(mat_htol.MatRegisterID,\"%MatRegisterID%EDD%mat_htol\") as id, mat_htol.AdmissionNo as anc_no, UPPER(concat(FName,\" \",SName,\" \",LName)) as mother_name, "
++" facilityname,EDD ,\"EDD\" FROM mother_details left join mat_htol on mother_details.motherID=mat_htol.motherid "
++" where (EDD NOT REGEXP '^..........$' || EDD>='2016-01-01')  ";          
+      
+
+String mat4="select  concat(mat_mtou.MatRegisterID,\"%MatRegisterID%DeliveryDate%mat_mtou\") as id, mat_mtou.AdmissionNo as anc_no, UPPER(concat(FName,\" \",SName,LName)) as mother_name," 
++" facilityname,DeliveryDate ,\"DeliveryDate\" FROM mother_details left join mat_mtou on mother_details.motherID=mat_mtou.motherid"   
++" where (DeliveryDate NOT REGEXP '^..........$' || DeliveryDate>='2016-01-01')";
+  
+
+
+String postnat="select  concat(postnat_atof.ID,\"%ID%VisitDate%postnat_atof\") as id , postnat_atof.PNCRegNo as anc_no, UPPER(concat(FName,\" \",SName,\" \",LName)) as mother_name,"
++" facilityname,postnat_atof.VisitDate,\"Visit Date\" FROM mother_details left join postnat_atof on mother_details.motherID=postnat_atof.motherid "
++" where (postnat_atof.VisitDate NOT REGEXP '^..........$' || postnat_atof.VisitDate>='2016-01-01') ";
+
+
+String qr="";   
           
        
      
-     if(category.equals("ancno_facility")){
+     if(category.equals("anc")){
      
-     qr=anc_facility;
-     header="Duplicates Found Using a combination of </font><font color='orange'> ANC NO and FACILITY NAME</font>";
+     qr=anc1;
+     header="Invalid dates in the </font><font color='orange'> ANC REGISTER </font>";
      }
-     else if (category.equals("name_facility"))
+     else if (category.equals("maternity"))
      {
-     header="Duplicates Found Using a combination of </font><font color='orange'>MOTHER NAME and FACILITY NAME</font>";
-      qr=name_facility;   
-     
+     header="Invalid dates entered in the </font><font color='orange'>MATERNITY REGISTER </font>";
+      qr=mat1;   
+  //============================================================================   
+      conn.rs=conn.st.executeQuery(mat2);       
+    int count=0;     
+    while(conn.rs.next()){
+    count++;
+    //now check from various registers whether the current mothers records exist     
+    table+="<tr id='"+conn.rs.getString("id")+"'>"          
+            + "<td style='text-align:center;'>"+conn.rs.getString(2)+"</td>"
+            + "<td style='text-align:center;'>"+conn.rs.getString(3)+"</td>"
+            + "<td style='text-align:center;'>"+conn.rs.getString(4)+"</td>"           
+            + "<td style='text-align:center;'>"+conn.rs.getString(5)+"</td>"
+            + "<td style='text-align:center;'>"+conn.rs.getString(6)+"</td>"
+            + "</tr>"; 
+    }
+    
+//=============================================================================    
+
+    //============================================================================   
+      conn.rs=conn.st.executeQuery(mat3);       
+    
+    while(conn.rs.next()){
+    count++;
+    //now check from various registers whether the current mothers records exist     
+    table+="<tr id='"+conn.rs.getString("id")+"'>"          
+            + "<td style='text-align:center;'>"+conn.rs.getString(2)+"</td>"
+            + "<td style='text-align:center;'>"+conn.rs.getString(3)+"</td>"
+            + "<td style='text-align:center;'>"+conn.rs.getString(4)+"</td>"           
+            + "<td style='text-align:center;'>"+conn.rs.getString(5)+"</td>"
+             + "<td style='text-align:center;'>"+conn.rs.getString(6)+"</td>"
+            + "</tr>"; 
+    }
+    
+//============================================================================= 
+    
+    
+  //============================================================================   
+      conn.rs=conn.st.executeQuery(mat4);       
+        
+    while(conn.rs.next()){
+    count++;
+    //now check from various registers whether the current mothers records exist     
+    table+="<tr id='"+conn.rs.getString("id")+"'>"          
+            + "<td style='text-align:center;'>"+conn.rs.getString(2)+"</td>"
+            + "<td style='text-align:center;'>"+conn.rs.getString(3)+"</td>"
+            + "<td style='text-align:center;'>"+conn.rs.getString(4)+"</td>"           
+            + "<td style='text-align:center;'>"+conn.rs.getString(5)+"</td>"
+             + "<td style='text-align:center;'>"+conn.rs.getString(6)+"</td>"
+            + "</tr>"; 
+    }
+    
+//=============================================================================   
+    
+    
+    
+      
      }
-     else if(category.equals("name_ancno_facility")){
+     else if(category.equals("postnatal")){
      
-     qr=anc_facil_name;
-     header="Duplicates Found Using a combination of <font color='orange'>MOTHERS NAME, ANC NO and FACILITY NAME</font>";
+     qr=postnat;
+     header="Invalid dates enterd in the  <font color='orange'> POSTNATAL REGISTER </font>";
      }
      
     //now  based on the received parameter, choose the query to run 
-       System.out.println(qr);
-       
-          conn.rs=conn.st.executeQuery(qr);
-          
-     int count=0;     
+       System.out.println(qr);     
+    conn.rs=conn.st.executeQuery(qr);       
+    int count=0;     
     while(conn.rs.next()){
     count++;
-    //now check from various registers whether the current mothers records exist
-    
-  String registers="";
-  
-  String anc="";
-  String matno="";
-  String postnataf="";
-  
-  
-  conn.rs1=conn.st1.executeQuery("select ancno from atoh where motherid='"+conn.rs.getString("id")+"' limit 1");
- if(conn.rs1.next()){ anc=conn.rs1.getString(1); registers+="ANC ,";     }
- 
- conn.rs1=conn.st1.executeQuery("select AdmissionNo from mat_atoh where motherid='"+conn.rs.getString("id")+"' limit 1");
- if(conn.rs1.next()){ matno=conn.rs1.getString(1);  registers+="MATERNITY ,";     }
- 
- 
- conn.rs1=conn.st1.executeQuery("select PNCRegNo from postnat_atof where motherid='"+conn.rs.getString("id")+"' limit 1");
- if(conn.rs1.next()){ postnataf=conn.rs1.getString(1);  registers+="POSTNATAL";     }
- 
- 
- if(postnataf.equalsIgnoreCase("null")){ postnataf="";}
- if(anc.equalsIgnoreCase("null")){ anc="";}
- if(matno.equalsIgnoreCase("null")){ matno="";}
- 
-    table+="<tr id='"+conn.rs.getString("id")+"'>"
-          
-            + "<td>"+conn.rs.getString("mother_name")+"</td>"
-            + "<td>"+anc+"</td>"
-            + "<td>"+matno+"</td>"
-            + "<td>"+postnataf+"</td>"
-            + "<td>"+conn.rs.getString("facilityname")+"</td>"
-            + "<td>"+conn.rs.getString("Age")+"</td>"           
-            + "<td>"+conn.rs.getString("ocur")+"</td>"
-            + "<td>"+registers+"</td>"
-           
-            + "</tr>";
-    
-   // System.out.println(count+"~~"+table);
-    
-    
+    //now check from various registers whether the current mothers records exist     
+    table+="<tr id='"+conn.rs.getString("id")+"'>"          
+            + "<td style='text-align:center;'>"+conn.rs.getString(2)+"</td>"
+            + "<td style='text-align:center;'>"+conn.rs.getString(3)+"</td>"
+            + "<td style='text-align:center;'>"+conn.rs.getString(4)+"</td>"           
+            + "<td style='text-align:center;'>"+conn.rs.getString(5)+"</td>"
+            + "<td style='text-align:center;'>"+conn.rs.getString(6)+"</td>"
+            + "</tr>"; 
     }    
     
       table+=" </tbody>"; 

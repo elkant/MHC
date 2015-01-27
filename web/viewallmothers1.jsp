@@ -173,7 +173,25 @@
 
                         },
                         
-                        
+                         {
+                            event: 'mouseover',
+                            indicator: 'Saving...',
+                            //                                                            					tooltip: 'Click to edit ',
+                            type: 'textarea',
+                            submit: 'Save changes',
+                            callback: function(value, settings)
+                            {
+                                alert(value);
+                                window.location.reload();
+                                // settings involing plugin parameters
+                                //                                                                                                                        alert('Element Changed : '+value);											
+                                //alert(settings.cssclass);
+                            },
+                            fnOnCellUpdated: function(sStatus, sValue, value, row, column, settings) {
+                                document.getElementById("msg").innerHTML = "(Cell Callback): is updated with value " + sValue;
+                            }
+
+                        },
                         {
                             
                             

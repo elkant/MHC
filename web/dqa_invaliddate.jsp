@@ -60,9 +60,9 @@ $(document).tooltip();
                                                           
   
         
-           <script src="scripts/jquery.js" type="text/javascript"></script> 
+           <!--<script src="scripts/jquery.js" type="text/javascript"></script>--> 
            <script src="scripts/jquery.dataTables.js" type="text/javascript"></script>
-         <script src="scripts/jquery.dataTables.editable.js" type="text/javascript"></script>
+           <script src="scripts/jquery.dataTables.editable_1_1.js" type="text/javascript"></script>
          <script src="scripts/jquery.jeditable.js" type="text/javascript"></script>
 <!--          <script src="scripts/jquery-ui.js" type="text/javascript"></script>-->
           <script src="scripts/jquery.validate.js" type="text/javascript"></script>
@@ -83,9 +83,10 @@ $(document).tooltip();
         <script type="text/javascript" src="js/noty/layouts/top.js"></script>
         <script type="text/javascript" src="js/noty/layouts/center.js"></script>
         <!-- You can add more layouts if you want -->
-
+            <script src="scripts/jquery.jeditable.datepicker.js" type="text/javascript"></script>
         <script type="text/javascript" src="js/noty/themes/default.js"></script>            
-                   
+                    <script src="js/datepicker.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="themes/base/jquery.ui.datepicker.css">
 
         
         <script src="ui/jquery.ui.core.js"></script>
@@ -152,11 +153,19 @@ $(document).tooltip();
                 "sPaginationType": "full_numbers",
                 "bJQueryUI": true
             }).makeEditable({
-                           
-                 sDeleteURL: "deletemember"
+                
+            sUpdateURL: "updateinvaliddate"         
+                
                  
                  ,
-                "aoColumns": [{type: "text"},null,null,null,null,null,null,null,null,null,null
+                "aoColumns": [null,null,null,{  type:   'datepicker',
+                                         datepicker: {
+                                 dateFormat: 'yy-mm-dd',
+                                 changeMonth:true,
+                                 changeYear:true
+                                          },
+                                        sSuccessResponse: "IGNORE"
+                                     },null
                         ]
             }
             
@@ -300,12 +309,12 @@ $(document).tooltip();
                 
                <div id="demo_jui">
                   <% if(session.getAttribute("level").equals("0") ) {%>  
-                  <button id="btnDeleteRow" value="cancel">Delete Record</button>
+                 
                 
                   <h2 id="notice" style="text-align: center;color:green;"> <% if(session.getAttribute("inv_header")!=null){ out.println(session.getAttribute("inv_header")); } else {%> Select The Duplicate Category in the Drop down list above <%}%></h2>
                   
                   
-                  <%}else {%><h3 style="color:red;"> Note: To delete a record, you need an administrator  account </h3><%}%>
+                  <%}else {%><%}%>
 		        <table id="members" class="display">
 		          
                             <%if(session.getAttribute("loaded_inv_table")!=null){

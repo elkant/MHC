@@ -142,11 +142,9 @@ $(document).tooltip();
     %>
                                 <script type="text/javascript"> 
                     
-                    var n = noty({text: '<%=session.getAttribute("datasend")%>',
+                    var n = noty({text: '<h3><%=session.getAttribute("datasend")%></h3>',
                         layout: 'center',
-                        type: 'Success',
- 
-                         timeout: 4800});
+                        type: 'Success'});
                     
                 </script> <%
                 session.removeAttribute("datasend");
