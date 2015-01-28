@@ -81,11 +81,7 @@ public class updatemomid extends HttpServlet {
             String post4="update postnat_gtom set motherid='"+motherID+"'  where  motherid ='"+conn.rs2.getString("motherID")+"'";
             String post5="update postnat_ntot set motherid='"+motherID+"'  where  motherid ='"+conn.rs2.getString("motherID")+"'";
             String post6="update postnat_utoz set motherid='"+motherID+"'  where  motherid ='"+conn.rs2.getString("motherID")+"'";
-           
-            
-            
-            
-            
+                       
             //conn.st.executeUpdate(qr);
             conn.st1.executeUpdate(atohqr);
             conn.st1.executeUpdate(itopqr);
@@ -127,13 +123,7 @@ public class updatemomid extends HttpServlet {
                System.out.println(del);
                }
            
-            
-          
-            
-       
-              
-                        
-            
+        
             
             
 //   String qr1=" CREATE TABLE IF NOT EXISTS mdetailstmp SELECT *  FROM mother_details GROUP BY motherID";

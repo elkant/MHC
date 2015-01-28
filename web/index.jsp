@@ -134,7 +134,7 @@ conn.rs.next();
             
 if(session.getAttribute("level")!=null){
     
-    response.sendRedirect("viewallmothers.jsp");
+    response.sendRedirect("viewallmothers");
     
 
 }
